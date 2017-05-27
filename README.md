@@ -12,7 +12,7 @@ This paper proposes a learning strategy that extracts object-part concepts from 
 
 3. Download the VOC Part Dataset (the "trainval.tar.gz" file) from http://www.stat.ucla.edu/~xianjie.chen/pascal_part_dataset/pascal_part.html and uncompress the file to the ./data/VOC_part/ folder. Download Pascal VOC 2010 images from http://host.robots.ox.ac.uk/pascal/VOC/voc2010/VOCtrainval_03-May-2010.tar and uncompress the VOCdevkit folder to the ./data/VOC_part/ folder (now, the ./data/VOC_part/ folder contains "truth.bird.mat" "Annotation_part" "mat2map.m" "VOCdevkit" and etc.).
 
-4. Uncompress the "neg.zip" file in the ./data/neg folder (now, the ./data/neg folder contains 1000 images 00001.JPEG, 00002.JPEG, and etc.).
+4. Uncompress the "neg1.zip" and "neg2.zip" files in the ./data/neg folder (now, the ./data/neg folder contains 1000 images 00001.JPEG, 00002.JPEG, and etc.).
 
 5. run the matlab code
 
