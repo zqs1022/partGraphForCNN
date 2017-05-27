@@ -8,7 +8,7 @@ This paper proposes a learning strategy that extracts object-part concepts from 
 
 1. Download the matconvnet from http://www.vlfeat.org/matconvnet/ and install the matconvnet to the ./matconvnet folder.
 
-2. Download the pre-trained VGG-16 network from http://www.vlfeat.org/matconvnet/pretrained/ and move the "imagenet-vgg-verydeep-16.mat" file to the ./matconvnet/ folder. We have tested the 1.0-beta24 version of the matconvnet.
+2. Download the pre-trained VGG-16 network from http://www.vlfeat.org/matconvnet/pretrained/ and move the "imagenet-vgg-verydeep-16.mat" file to the ./matconvnet/ folder. We have tested the 1.0-beta24 version of the matconvnet. Now the ./matconvnet folder contains "doc" "examples" "README.md" "imagenet-vgg-verydeep-16.mat" and etc.
 
 3. Download the VOC Part Dataset (the "trainval.tar.gz" file) from http://www.stat.ucla.edu/~xianjie.chen/pascal_part_dataset/pascal_part.html and uncompress the file to the ./data/VOC_part/ folder. Download Pascal VOC 2010 images from http://host.robots.ox.ac.uk/pascal/VOC/voc2010/VOCtrainval_03-May-2010.tar and uncompress the VOCdevkit folder to the ./data/VOC_part/ folder (now, the ./data/VOC_part/ folder contains "truth.bird.mat" "Annotation_part" "mat2map.m" "VOCdevkit" and etc.).
 
