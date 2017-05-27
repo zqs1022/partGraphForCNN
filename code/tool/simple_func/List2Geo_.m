@@ -1,0 +1,10 @@
+function geo=List2Geo_(validList,layer,h,theConf)
+wl=ceil(validList./h);
+hl=validList-(wl-1).*h;
+num=length(validList);
+geo.xHW=zeros(2,num);
+geo.xHW(1,:)=hl;
+geo.xHW(2,:)=wl;
+geo.Scale=theConf.convnet.targetScale(layer);
+geo.Stride=theConf.convnet.targetStride(layer);
+geo.centerStart=theConf.convnet.targetCenter(layer);

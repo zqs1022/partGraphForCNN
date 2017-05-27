@@ -1,0 +1,27 @@
+function fset=getHoG_(I,layer,theConf,BlockNum)
+if(theConf.QA.IsUseHoG==false)
+    fset=zeros(0,BlockNum^2);
+    return;
+end
+HOG=HoG_para(layer,theConf);
+[h,w,~]=size(I);
+the_s=round(HOG.CellStart-HOG.CellNum*HOG.CellSize/2+1);
+the_len=HOG.CellSize*(BlockNum+HOG.CellNum-1);
+if(the_s<=0)
+    d=1-the_s;
+    tmpI=zeros(h+d,w+d,3);
+    tmpI(d+1:d+h,d+1:d+w,:)=I;
+    I=tmpI;
+else
+    I=I(the_s:end,the_s:end,:);
+end
+[h,w,~]=size(I);
+if(the_len>h)
+    I(the_len,1,3)=0;
+end
+if(the_len>w)
+    I(1,the_len,3)=0;
+end
+fset=extractHOGFeatures(I,'CellSize',[HOG.CellSize,HOG.CellSize],'BlockSize',[HOG.CellNum,HOG.CellNum],'BlockOverlap',[HOG.CellNum-1,HOG.CellNum-1],'NumBins',HOG.VoteOriNum);
+dim=HOG.VoteOriNum*(HOG.CellNum^2);
+fset=reshape(fset,[dim,BlockNum^2]);
