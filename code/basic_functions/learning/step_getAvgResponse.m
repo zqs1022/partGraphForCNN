@@ -19,7 +19,7 @@ end
 
 function [avg_res,avgrelu_res,sqrtvar_layer]=getAvgResponse(objset,theConf,theNet)
 theConf_neg=theConf;
-theConf_neg.imgdir=theConf_neg.imgdir_neg;
+theConf_neg.data.imgdir=theConf_neg.data.imgdir_neg;
 objNum=length(objset);
 layerNum=length(theConf_neg.convnet.targetLayers);
 avg_res(layerNum).x=[];
