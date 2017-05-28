@@ -18,15 +18,17 @@ end
 
 
 function [avg_res,avgrelu_res,sqrtvar_layer]=getAvgResponse(objset,theConf,theNet)
+theConf_neg=theConf;
+theConf_neg.imgdir=theConf_neg.imgdir_neg;
 objNum=length(objset);
-layerNum=length(theConf.convnet.targetLayers);
+layerNum=length(theConf_neg.convnet.targetLayers);
 avg_res(layerNum).x=[];
 avgrelu_res(layerNum).x=[];
 sqrtvar_layer(layerNum).x=[];
 for objID=1:objNum
-    [res,~,~]=getObjFeature(objset(objID),theConf,theNet,false);
+    [res,~,~]=getObjFeature(objset(objID),theConf_neg,theNet,false);
     for layer=1:layerNum
-        x=f(res,layer,theConf);
+        x=f(res,layer,theConf_neg);
         if(objID==1)
             avg_res(layer).x=x;
             avgrelu_res(layer).x=max(x,0);
